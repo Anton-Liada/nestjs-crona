@@ -1,10 +1,11 @@
-import { CommonModule } from '@/common';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
-  imports: [CommonModule],
+  imports: [EventEmitterModule.forRoot(), ScheduleModule.forRoot()],
   providers: [AppService],
   controllers: [AppController],
 })
